@@ -1,0 +1,24 @@
+{
+  "name": "system-config",
+  "version": "1.0.0",
+  "description": "System Configuration",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [
+    "system",
+    "configuration",
+    "properties"
+  ],
+  "author": "Emanuele Disco",
+  "license": "ISC",
+  "dependencies": {
+    "typings": "^1.4.0",
+    "connect": "latest",
+    "serve-static": "latest",
+    "bower": "latest",
+    "bower-installer": "latest"
+  }
+}
