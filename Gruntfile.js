@@ -32,6 +32,17 @@ module.exports = function (grunt) {
                     {expand: true, cwd: 'src/', src: ['**'], dest: 'dist/'},
                 ]
             }
+        },
+        compress: {
+            main: {
+                options: {
+                    archive: 'dist/sysconf-v<%= pkg.version %>.tar.gz',
+                    mode: 'tgz'
+                },
+                files: [
+                    {expand: true, cwd: 'dist/', src: ['**'], dest: 'sysconf-v<%= pkg.version %>'}
+                ]
+            }
         }
     });
 
@@ -39,8 +50,9 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-copy');
+    grunt.loadNpmTasks('grunt-contrib-compress');
 
     // Default task(s).
-    grunt.registerTask('default', ['jshint', 'copy', 'uglify']);
+    grunt.registerTask('default', ['jshint', 'copy', 'uglify', 'compress']);
 
 };
