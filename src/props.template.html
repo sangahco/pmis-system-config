@@ -47,34 +47,4 @@
             <td>{{prop.value}}</td>
         </tr>
     </table>
-    
-    <table id="pretty-table" class="table table-condensed">
-        <thead>
-            <tr>
-                <th>#</th>
-                <th>Property</th>
-                <th>Value</th>
-            </tr>
-        </thead>
-        <tr ng-repeat="prop in ctrl.sysprops | filter : filter | orderBy:'key'">
-            <td>{{$index + 1}}</td>
-            <td>{{prop.key}}</td>
-            <td>{{prop.value}}</td>
-        </tr>
-    </table>
-    
-    <table id="pretty-table" class="table table-condensed">
-        <thead>
-            <tr>
-                <th>#</th>
-                <th>Property</th>
-                <th>Value</th>
-            </tr>
-        </thead>
-        <tr ng-repeat="prop in ctrl.sysvars | filter : filter | orderBy:'key'">
-            <td>{{$index + 1}}</td>
-            <td>{{prop.key}}</td>
-            <td>{{prop.value}}</td>
-        </tr>
-    </table>
 </div>
