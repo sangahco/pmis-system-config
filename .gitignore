@@ -3,3 +3,5 @@ node_modules
 libs
 bower_components
 *.log
+build
+dist

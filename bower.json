@@ -11,7 +11,7 @@
     "bootstrap": "3.3.x"
   },
   "install": {
-    "path": "libs",
+    "path": "src/libs",
     "sources": {
       "angular": ["bower_components/angular/angular.min.js", "bower_components/angular/angular.min.js.map"],
       "angular-route": ["bower_components/angular-route/angular-route.min.js", "bower_components/angular-route/angular-route.min.js.map"],

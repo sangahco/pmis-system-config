@@ -28,12 +28,12 @@
 			}
 			
 			data = response.data.sysvars;
-			for(var key in data){
+			for(key in data){
 				self.sysvars.push({ "key" : key, "value": data[key] });
 			}
 			
 			data = response.data.sysprops;
-			for(var key in data){
+			for(key in data){
 				self.sysprops.push({ "key" : key, "value": data[key] });
 			}
 			
