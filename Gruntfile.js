@@ -9,8 +9,8 @@ module.exports = function (grunt) {
             },
             build: {
                 files: { 
-                    'dist/app.module.js': 'src/app.module.js',
-                    'dist/props.module.js': 'src/props.module.js'
+                    'build/app.module.js': 'src/app.module.js',
+                    'build/props.module.js': 'src/props.module.js'
                 }
             }
         },
@@ -29,7 +29,7 @@ module.exports = function (grunt) {
         copy: {
             main: {
                 files: [
-                    {expand: true, cwd: 'src/', src: ['**'], dest: 'dist/'},
+                    {expand: true, cwd: 'src/', src: ['**'], dest: 'build/'},
                 ]
             }
         },
@@ -40,7 +40,7 @@ module.exports = function (grunt) {
                     mode: 'tgz'
                 },
                 files: [
-                    {expand: true, cwd: 'dist/', src: ['**'], dest: 'sysconf-v<%= pkg.version %>'}
+                    {expand: true, cwd: 'build/', src: ['**'], dest: 'sysconf-v<%= pkg.version %>'}
                 ]
             }
         }
