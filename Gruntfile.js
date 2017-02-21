@@ -14,6 +14,7 @@ module.exports = function (grunt) {
                 }
             }
         },
+
         jshint: {
             all: ['Gruntfile.js', 'src/**/*.js', '!src/libs/**/*.js'],
             options: {
@@ -22,10 +23,12 @@ module.exports = function (grunt) {
                 }
             }
         },
+
         watch: {
             files: ['<%= jshint.all %>'],
             tasks: ['jshint']
         },
+
         copy: {
             main: {
                 files: [
@@ -33,6 +36,7 @@ module.exports = function (grunt) {
                 ]
             }
         },
+
         compress: {
             main: {
                 options: {
@@ -43,7 +47,13 @@ module.exports = function (grunt) {
                     {expand: true, cwd: 'build/', src: ['**'], dest: 'sysconf-v<%= pkg.version %>'}
                 ]
             }
-        }
+        },
+
+        clean: {
+            build: {
+                src: ['build/*', 'dist/*']
+            }
+        },
     });
 
     grunt.loadNpmTasks('grunt-contrib-uglify');
@@ -51,8 +61,11 @@ module.exports = function (grunt) {
     grunt.loadNpmTasks('grunt-contrib-watch');
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-compress');
+    grunt.loadNpmTasks('grunt-contrib-clean');
 
     // Default task(s).
-    grunt.registerTask('default', ['jshint', 'copy', 'uglify', 'compress']);
+    grunt.registerTask('default', ['jshint']);
+
+    grunt.registerTask('build', ['clean', 'copy', 'uglify', 'compress']);
 
 };
